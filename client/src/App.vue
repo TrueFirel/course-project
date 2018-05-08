@@ -1,23 +1,52 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div id="app" >
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import SignIn from './components/SignIn'
+  import SignUp from './components/SignUp'
+  import userPage from './components/UserPage'
+
 export default {
-  name: 'App'
+    name: 'app',
+    components: {
+      SignIn,
+      SignUp,
+      userPage
+    },
+    data () {
+      return {
+        responseFromServer: {
+          id: '',
+          login: '',
+          token: null,
+          permission: ''
+        }
+      }
+    },
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+
+  @import "~bootstrap/scss/bootstrap";
+
+  body{
+    background-image: url(./wallpaper-2979955.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  #btn_sbmt:disabled{
+    background: lightgrey;
+    color: #1d2124;
+    border: solid darkgrey;
+  }
+  #btn_sbmt:disabled:hover{
+    cursor: not-allowed;
+  }
 </style>

@@ -3,13 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import vueAxios from 'vue-axios'
+import VueCookie from 'vue-cookie'
 
 Vue.config.productionTip = false
+Vue.use(vueAxios, axios)
+Vue.use(VueCookie)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  components: { App }
 })
