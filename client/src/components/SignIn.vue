@@ -75,7 +75,7 @@
           this.isEmptyPassword = false
         }
         if (errCounter === 0) {
-          document.getElementById('btn_sbmt').disabled = true
+          document.getElementById('btn_sbmt').disabled = true;
           this.axios({
             method: 'post',
             url: 'http://localhost:8081/login',
@@ -85,8 +85,13 @@
             }
           })
             .then((response) => {
-              document.getElementById('btn_sbmt').disabled = false
-              if (response.data.token !== null) {
+              document.getElementById('btn_sbmt').disabled = false;
+              if (response.data.login !== undefined) {
+                console.log(response.data.login);
+                this.$parent.login = response.data.login;
+                console.log(this.$parent.login);
+                this.$parent.permission = response.data.permission;
+                this.$parent.password = response.data.password;
                 this.$router.push('/userPage')
               }
             })

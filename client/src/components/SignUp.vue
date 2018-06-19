@@ -87,19 +87,19 @@
         if(this.fieldData.fpass.length < 8) {
           this.isEmptyPass = true
           errCounter++
-        } else this.isEmptyPass = false
+        } else this.isEmptyPass = false;
 
         if(this.fieldData.fpass !== this.spass) {
-          this.isPasswordsInequal = true
+          this.isPasswordsInequal = true;
           errCounter++
-        } else this.isPasswordsInequal = false
+        } else this.isPasswordsInequal = false;
 
         if(this.fieldData.email === '') {
-          this.isEmptyEmail = true
+          this.isEmptyEmail = true;
           errCounter++
-        } else this.isEmptyEmail = false
+        } else this.isEmptyEmail = false;
         if(errCounter === 0) {
-          document.getElementById('btn_sbmt').disabled = true
+          document.getElementById('btn_sbmt').disabled = true;
           this.axios({
             method: 'post',
             url: 'http://localhost:8081/register',

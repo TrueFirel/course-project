@@ -21,8 +21,8 @@ export default {
         responseFromServer: {
           id: '',
           login: '',
-          token: null,
-          permission: ''
+          permission: '',
+          password: ''
         }
       }
     },

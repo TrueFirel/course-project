@@ -6,6 +6,12 @@ import Home from '@/components/UserPage'
 import Task from '@/components/Task'
 import ResetPassword from '@/components/ResetPassword'
 import SetPassword from '@/components/SetPassword'
+import UserControl from '@/components/UserControl'
+import EditUser from "@/components/EditUser"
+import AddUser from "@/components/AddUser"
+import DeleteUser from "@/components/DeleteUser"
+import ShowUsers from "@/components/ShowUsers"
+import Edditing from "@/components/Edditing"
 
 Vue.use(Router)
 
@@ -36,12 +42,46 @@ export default new Router({
       name: 'homepage',
       component: Home,
       children: [
+        {
+          path: '/Task',
+          name: 'Task',
+          component: Task
+        },
+        {
+          path: '/UserControl',
+          name: 'UserControl',
+          component: UserControl,
+          children :[
+            {
+              path: '/EditUser',
+              name: 'EditUser',
+              component: EditUser,
+              children:[
+                {
+                  path: '/Edditing',
+                  name: 'Edditing',
+                  component: Edditing
+                }
+              ]
+            },
+            {
+              path: '/DeleteUser',
+              name: 'DeleteUser',
+              component: DeleteUser
+            },
+            {
+              path: '/ShowUsers',
+              name: 'ShowUsers',
+              component: ShowUsers
+            },
+            {
+              path: '/AddUser',
+              name: 'AddUser',
+              component: AddUser
+            }
+          ]
+        }
       ]
-    },
-    {
-      path: '/myTask',
-      name: 'Task',
-      component: Task
     }
   ]
 })

@@ -91,18 +91,6 @@
     margin: auto;
     margin-top: 10px;
   }
-  .float-msg {
-    position: absolute;
-    background: black;
-    opacity: 0.7;
-    animation-name: blacking;
-    animation-duration: 1s;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-  }
   #s-msg {
     position: absolute;
     left: 0;
